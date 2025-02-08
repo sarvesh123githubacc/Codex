@@ -33,6 +33,7 @@ const createMessage = async (req, res) => {
 
 		const msg = await Message.create({
 			author: user._id,
+			author_name: user.firstName,
 			content: content,
 			community: community._id,
 		});

@@ -6,6 +6,10 @@ const messageSchema = new mongoose.Schema(
 			type: mongoose.Schema.Types.ObjectId,
 			required: true,
 		},
+    author_name: {
+      type:String,
+      required:true,
+    },
 		content: {
 			type: String,
 			required: true,
