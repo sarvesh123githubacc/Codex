@@ -20,6 +20,9 @@ const doctorSchema = new mongoose.Schema(
 			enum: ["male", "female", "other"],
 			required: true,
 		},
+		events: {
+			type: [mongoose.Schema.Types.ObjectId],
+		},
 		bio: {
 			type: String,
 		},
@@ -28,6 +31,9 @@ const doctorSchema = new mongoose.Schema(
 			min: 1000000000,
 			max: 9999999999,
 		},
+    rating: {
+      type:Float,
+    },
 		communities: {
 			type: [mongoose.Schema.Types.ObjectId],
 		},

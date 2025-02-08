@@ -4,6 +4,7 @@ import connectMongo from "./connection.js";
 import userRouter from "./routes/user.js";
 import communityRouter from "./routes/community.js";
 import messageRouter from "./routes/message.js";
+import ngoRouter from "./routes/ngos.js";
 
 const app = express();
 const PORT = 8080;
@@ -16,3 +17,4 @@ app.use(express.json());
 app.use("/users", userRouter);
 app.use("/community", communityRouter);
 app.use("/message", messageRouter);
+app.use("/ngo", ngoRouter);
