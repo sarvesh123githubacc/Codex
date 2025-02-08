@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const Navbar = () => {
 
-  const [token, setToken] = useState(true);
+  const [token, setToken] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const navigate = useNavigate();
 
