@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const messageSchema = new mongoose.Schema(
+const doctorSchema = new mongoose.Schema(
 	{
 		firstName: {
 			type: String,
@@ -60,6 +60,6 @@ const messageSchema = new mongoose.Schema(
 	},
 );
 
-const Message = mongoose.model("message", messageSchema);
+const Doctor = mongoose.model("doctor", doctorSchema);
 
-export default Message;
+export default Doctor;
