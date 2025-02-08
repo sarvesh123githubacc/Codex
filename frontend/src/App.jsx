@@ -1,14 +1,22 @@
-import { useState } from 'react'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 
 function App() {
-
   return (
     <>
-    <div className='text-blue-600'>
-      hello
-    </div>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+      </Routes>
+
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
