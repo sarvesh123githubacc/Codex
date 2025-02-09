@@ -10,6 +10,7 @@ import EditProfile from "./pages/EditProfile";
 import Chat from "./pages/Chat";
 import DoctorsProfile from "./pages/DoctorsProfile";
 import PastEvents from "./pages/PastEvents";
+import CommunityForm from "./pages/CommunityForm";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/doctorsProfile/:id" element={<DoctorsProfile />} />
         <Route path="/pastevents" element={<PastEvents />} />
+        <Route path="/new" element={<CommunityForm />} />
 
       </Routes>
 
