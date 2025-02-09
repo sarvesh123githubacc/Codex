@@ -407,7 +407,7 @@ function Chat() {
 									<span className="text-2xl mr-3">{group.icon}</span>
 								)}
 								<div>
-									<h2 className="font-medium">{group.name}</h2>
+									<h2 className="font-medium">{group.title}</h2>
 									<p className="text-sm text-gray-500">
 										{group.members} members
 									</p>
