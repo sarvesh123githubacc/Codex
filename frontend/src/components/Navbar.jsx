@@ -1,11 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Heart, CircleUserRound, Settings , LogOut} from 'lucide-react';
+import { Heart, CircleUserRound, Settings , LogOut, Calendar} from 'lucide-react';
 import { useState } from 'react';
 
 const Navbar = () => {
 
-  const [token, setToken] = useState(true);
+  const [token, setToken] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [showEvents, setShowEvents] = useState(false);
+  const [role, setRole] = useState("ngo");
   const navigate = useNavigate();
 
   return (
@@ -21,7 +23,14 @@ const Navbar = () => {
           <div className="relative hidden sm:ml-6 sm:flex sm:items-center space-x-8">
             {
               token
-              ? <div>
+              ? <>
+                {(role == "ngo" || role == "doctor") && (
+                  <Link to="/pastevents" className="text-gray-700 hover:text-blue-600 flex items-center">
+                  <Calendar className="w-5 h-5 mr-1" />
+                  Events
+                </Link>                 
+                )}
+                <div>
                 <button onClick={()=>{
                   setShowProfile(!showProfile)
                 }}
@@ -49,6 +58,7 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
+              </>
               : <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-8"><Link to='/login' className="text-gray-700 hover:text-blue-600">Login</Link>
                <Link to='/SignUp' className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
                 Sign Up

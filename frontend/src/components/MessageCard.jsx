@@ -5,8 +5,7 @@ import { MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MessageBox = () => {
-  const [messages, setMessages] = useState([1,2,3]);
-  const [ifmessage, setIfmessage] = useState();
+  const [messages, setMessages] = useState([]);
 
   // useEffect(() => {
   //   axios.get("/api/messages").then((res) => setMessages(res.data));
@@ -22,7 +21,7 @@ const MessageBox = () => {
         <h3 className="text-lg font-semibold">Messages</h3>
         
         {messages.length > 0 ? (
-          <ul className='text-gray-600' >
+          <ul className='text-gray-600 h-29.5' >
             {messages.map((msg) => (
               <li key={msg.id}>{msg.text}</li>
             ))}

@@ -44,11 +44,12 @@ const SignUp = () => {
     const PatientSignUp = () => (
         <form className='space-y-6'>
             <div className="userprofile rounded-md shadow-sm -space-y-px">
+                <div className='text-xl font-bold m-2 underline mr-59'>General Infomation</div>
                 <div className="enteremail">
                     <label htmlFor="email" className="sr-only">Email address</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Mail className="h-5 w-5 text-gray-400" />
+                            {/* <Mail className="h-5 w-5 text-gray-400" /> */}
                         </div>
                         <input
                             id="email"
@@ -56,7 +57,7 @@ const SignUp = () => {
                             type="email"
                             required
                             className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                            placeholder="Email address"
+                            placeholder="Enter Email address"
                         />
                     </div>
                 </div>
@@ -67,7 +68,98 @@ const SignUp = () => {
                         type="password"
                         required
                         className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                        placeholder="Password"
+                        placeholder="Create Password"
+                    />
+                </div>
+                <div className="firstname">
+                    <input
+                        id="firstname"
+                        name="firstname"
+                        type='firstname'
+                        required
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter your First name"
+                    />
+                </div>
+                <div className="lastname">
+                    <input
+                        id="lastname"
+                        name="lastname"
+                        type="lastname"
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter your Last name"
+                    />
+                </div>
+                <div className="gender">
+                    <input
+                        id="gender"
+                        name="gender"
+                        type='gender'
+                        required
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter your Gender"
+                    />
+                </div>
+                <div className="phone-number">
+                    <input
+                        id="phone-number"
+                        name="phone-number"
+                        type='tel'
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter your Phone number"
+                    />
+                </div>
+                <div className="bio">
+                    <input
+                        id="bio"
+                        name="bio"
+                        type='text'
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter Bio"
+                    />
+                </div>
+
+                <div className='text-xl font-bold m-2 mr-68 underline'>Medical History</div>
+                <div className="primary-condition">
+                    <input
+                        id="primary-condition"
+                        name="primary-condition"
+                        type='primary-condition'
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter your Primary condition"
+                    />
+                </div>
+
+                <div className='text-xl font-bold m-2 mr-60 underline'>Emergency Contact</div>
+
+                <div className="emergency-name">
+                    <input
+                        id="emergency-name"
+                        name="emergency-name"
+                        type='emergency-name'
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter name"
+                    />
+                </div>
+
+                <div className="relation">
+                    <input
+                        id="relation"
+                        name="relation"
+                        type='relation'
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter your relation with the person"
+                    />
+                </div>
+
+                <div className="emergency-number">
+                    <input
+                        id="emergency-number"
+                        name="emergency-number"
+                        type='number'
+                        pattern="[0-9]{10}"
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                        placeholder="Enter the phone number"
                     />
                 </div>
 
@@ -80,7 +172,7 @@ const SignUp = () => {
                     </button>
                 </div>
             </div>
-        </form>
+            </form>
     );
 
 
