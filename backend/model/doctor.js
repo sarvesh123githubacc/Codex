@@ -46,6 +46,9 @@ const doctorSchema = new mongoose.Schema(
 				type: String,
 				required: true,
 			},
+      qualification: {
+        type:String,
+      },
 		},
 		clinic: {
 			name: {
@@ -54,6 +57,9 @@ const doctorSchema = new mongoose.Schema(
 			location: {
 				type: String,
 			},
+      pin:{
+        type:Number,
+      },
 			phoneNumber: {
 				type: Number,
 				min: 1000000000,

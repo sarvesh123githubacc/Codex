@@ -1,18 +1,51 @@
 import React from "react";
 import { useState } from "react";
-import {
-	User,
-	Mail,
-	Lock,
-	UserCircle2,
-	Stethoscope,
-	Building2,
-	Phone,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { UserCircle2, Stethoscope } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
 	const [userType, setUserType] = useState("select");
+	const redirect = useNavigate();
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const email = e.target[0].value;
+		const password = e.target[1].value;
+		const firstName = e.target[2].value;
+		const lastName = e.target[3].value;
+		const gender = e.target[4].value;
+		const phone = e.target[5].value;
+		const bio = e.target[6].value;
+		const primaryCondition = e.target[7].value;
+		const emergencyContact = e.target[8].value;
+		const emergencyRelation = e.target[9].value;
+		const emergencyPhone = e.target[10].value;
+
+		const res = await fetch("http://localhost:8080/user/signup", {
+			method: "POST",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				firstName: firstName,
+				lastName: lastName,
+				email: email,
+				password: password,
+				gender: gender,
+				bio: bio,
+				phone: phone,
+				primaryCondition: primaryCondition,
+				emergencyContact: emergencyContact,
+				emergencyRelation: emergencyRelation,
+				emergencyPhone: emergencyPhone,
+			}),
+		});
+		const obj = await res.json();
+		if (res.status === 201) {
+			return redirect("/dashboard");
+		}
+	};
 
 	const ProfileSelection = () => (
 		<div className="selectprofile space-y-6">
@@ -48,7 +81,7 @@ const SignUp = () => {
 	);
 
 	const PatientSignUp = () => (
-		<form className="space-y-6">
+		<form className="space-y-6" onSubmit={handleSubmit}>
 			<div className="userprofile rounded-md shadow-sm -space-y-px">
 				<div className="text-xl font-bold m-2 underline mr-59">
 					General Infomation

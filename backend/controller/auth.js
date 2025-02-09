@@ -119,12 +119,12 @@ const doctorSignup = async (req, res, next) => {
 		return res.json({ message: "Password must be atleast 8 long" });
 	}
 
-	const existingUser = await User.findOne({ email });
+	const existingUser = await Doctor.findOne({ email });
 	if (existingUser) {
 		return res.json({ message: "Doctor already exists" });
 	}
 
-	const result = await User.create({
+	const result = await Doctor.create({
 		firstName: firstName,
 		lastName: lastName,
 		password: password,
