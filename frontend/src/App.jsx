@@ -9,6 +9,7 @@ import Events from "./pages/Events"
 import EditProfile from "./pages/EditProfile";
 import Chat from "./pages/Chat";
 import DoctorsProfile from "./pages/DoctorsProfile";
+import PastEvents from "./pages/PastEvents";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/doctorsProfile/:id" element={<DoctorsProfile />} />
+        <Route path="/pastevents" element={<PastEvents />} />
 
       </Routes>
 
