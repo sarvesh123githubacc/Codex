@@ -1,12 +1,43 @@
 import User from "../model/user.js";
+import jwt from "jsonwebtoken";
+import { configDotenv } from "dotenv";
+
+configDotenv;
 
 const getUserById = async (req, res) => {
-	const user = await User.findById(req.params.id);
-	if (!user) {
-		return res.json({ message: "User does not exist" });
+	const token = req.cookies.token;
+	if (!token) {
+		return res.status(401).json({ message: "Unauthorized" });
 	}
+	jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
+		if (err) {
+			return res.status(401).json({ message: "Unauthorized" });
+		}
 
-	return res.json(user);
+		const user = await User.findById(data.id);
+		if (!user) {
+			return res.status(401).json({ message: "Unauthorized" });
+		}
+		return res.json(user);
+	});
+};
+
+const updateUserData = async (req, res) => {
+	const token = req.cookies.token;
+	if (!token) {
+		return res.status(401).json({ message: "Unauthorized" });
+	}
+	jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
+		if (err) {
+			return res.status(401).json({ message: "Unauthorized" });
+		}
+
+		const user = await User.updateOne({ _id: data.id }, req.body);
+		if (!user) {
+			return res.status(401).json({ message: "Unauthorized" });
+		}
+		return res.json(user);
+	});
 };
 
 const getAllUsers = async (req, res) => {
@@ -19,4 +50,4 @@ const deleteUserById = async (req, res) => {
 	return res.json(result);
 };
 
-export { getUserById, getAllUsers, deleteUserById };
+export { getUserById, getAllUsers, deleteUserById, updateUserData };

@@ -26,13 +26,13 @@ const doctorSchema = new mongoose.Schema(
 		bio: {
 			type: String,
 		},
-		phoneNumber: {
+		phone: {
 			type: Number,
 			min: 1000000000,
 			max: 9999999999,
 		},
     rating: {
-      type:Float,
+      type:Number,
     },
 		communities: {
 			type: [mongoose.Schema.Types.ObjectId],
