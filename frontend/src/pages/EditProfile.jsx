@@ -64,7 +64,7 @@ const EditProfile = () => {
 	};
 
 	return (
-		<div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
+		<div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-12 mb-12">
 			<button
 				className="text-blue-600 mb-4"
 				onClick={() => navigate("/dashboard")}
@@ -77,9 +77,9 @@ const EditProfile = () => {
 			</p>
 
 			<form onSubmit={handleSubmit} className="space-y-4">
-				<div className="p-4 border rounded-lg">
+				<div className="p-4 border rounded-lg border-white shadow-lg">
 					<h3 className="text-lg font-semibold mb-2">Basic Information</h3>
-					<div className="grid grid-cols-2 gap-4">
+					<div className="grid grid-cols-2 gap-2 mb-2">
 						<input
 							type="text"
 							name="firstName"
@@ -132,7 +132,7 @@ const EditProfile = () => {
 					></textarea>
 				</div>
 
-				<div className="p-4 border rounded-lg">
+				<div className="p-4 border rounded-lg border-white shadow-lg">
 					<h3 className="text-lg font-semibold mb-2">Medical Information</h3>
 					<input
 						type="text"
@@ -144,7 +144,7 @@ const EditProfile = () => {
 					/>
 				</div>
 
-				<div className="p-4 border rounded-lg">
+				<div className="p-4 border rounded-lg border-white shadow-lg">
 					<h3 className="text-lg font-semibold mb-2">Emergency Contact</h3>
 					<div className="grid grid-cols-2 gap-4">
 						<input
