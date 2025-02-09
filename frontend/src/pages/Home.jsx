@@ -6,6 +6,7 @@ import {
     Shield,
     UserPlus,
   } from "lucide-react";
+  import { Link } from "react-router-dom";
   // import { useEffect } from "react";
   // import { io } from "socket.io-client";
   
@@ -36,16 +37,53 @@ import {
   
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
+                  <Link to="/signup">
                   <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
                     <UserPlus className="w-5 h-5 mr-2" />
                     Join as Patient
                   </button>
+                  </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10">
+                <Link to="/signup">
+                  <button  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10">
                     <Stethoscope className="w-5 h-5 mr-2" />
                     Join as Doctor
                   </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="joincommunity mt-24 bg-blue-50 rounded-2xl p-8 sm:p-12">
+              <div className=" max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl font-extrabold text-gray-900">
+                  Join Our Growing Community
+                </h2>
+                <p className="mt-4 text-lg text-gray-500">
+                  CareCircle brings together patients, healthcare providers, and
+                  support communities to create a comprehensive care network for
+                  differently abled individuals.
+                </p>
+                <div className="numbers mt-8 flex justify-center space-x-8">
+                  <div className="text-center">
+                    <p className="text-4xl font-extrabold text-blue-600">1000+</p>
+                    <p className="mt-2 text-base font-medium text-gray-500">
+                      Active Members
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-extrabold text-blue-600">30+</p>
+                    <p className="mt-2 text-base font-medium text-gray-500">
+                      Affiliated NGO's
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-extrabold text-blue-600">200+</p>
+                    <p className="mt-2 text-base font-medium text-gray-500">
+                      Affiliated Doctors
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -56,7 +94,7 @@ import {
                   How CareCircle Supports You
                 </h2>
               </div>
-              <div className="features grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="features grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-18">
                 <FeatureCard
                   icon={<Users className="h-6 w-6 text-blue-600" />}
                   title="Inclusive Communities"
@@ -90,38 +128,7 @@ import {
               </div>
             </div>
   
-            <div className="joincommunity mt-24 bg-blue-50 rounded-2xl p-8 sm:p-12">
-              <div className=" max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl font-extrabold text-gray-900">
-                  Join Our Growing Community
-                </h2>
-                <p className="mt-4 text-lg text-gray-500">
-                  CareCircle brings together patients, healthcare providers, and
-                  support communities to create a comprehensive care network for
-                  differently abled individuals.
-                </p>
-                <div className="numbers mt-8 flex justify-center space-x-8">
-                  <div className="text-center">
-                    <p className="text-4xl font-extrabold text-blue-600">1000+</p>
-                    <p className="mt-2 text-base font-medium text-gray-500">
-                      Active Members
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-4xl font-extrabold text-blue-600">50+</p>
-                    <p className="mt-2 text-base font-medium text-gray-500">
-                      Specialized Communities
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-4xl font-extrabold text-blue-600">200+</p>
-                    <p className="mt-2 text-base font-medium text-gray-500">
-                      Healthcare Providers
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </main>
         </div>
       </div>
