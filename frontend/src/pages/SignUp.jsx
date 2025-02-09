@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 const SignUp = () => {
-    // const [userType, setUserType] = useState<'select' | 'patient' | 'doctor'>('select');
     const [userType, setUserType] = useState('select');
 
     const ProfileSelection = () => (
@@ -179,11 +178,11 @@ const SignUp = () => {
     const DoctorSignUp = () => (
         <form className='space-y-6'>
             <div className="userprofile rounded-md shadow-sm -space-y-px">
+            <div className='text-xl font-bold m-2 underline mr-59'>General Infomation</div>
                 <div className="enteremail">
                     <label htmlFor="email" className="sr-only">Enter Email address</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Mail className="h-5 w-5 text-gray-400" />
                         </div>
                         <input
                             id="email"
@@ -204,6 +203,49 @@ const SignUp = () => {
                         className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                         placeholder="Enter Password"
                     />
+                </div>
+
+                <div>
+
+                </div>
+                <div>
+                <input name="firstName" type="text" placeholder="First Name" required className="input appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+
+                </div>
+                <div>
+                <input name="lastName" type="text" placeholder="Last Name" className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+
+                </div>
+                <div>
+                <input name="gender" type="text" placeholder="Gender" required className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+                </div>
+                <div>
+                <input name="phoneNumber" type="tel" placeholder="Phone Number" className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+                </div>
+                <div>
+                <input name="bio" type="text" placeholder="Bio" className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+
+                </div>
+                <div className='text-xl font-bold m-2 underline mr-78'>Experience</div>
+                <div>
+                <input name="experience.years" type="number" placeholder="Years of Experience" required className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+
+                </div>
+                <div>
+                <input name="experience.expertise" type="text" placeholder="Expertise" required className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+
+                </div>
+                <div className='text-xl font-bold m-2 underline mr-90'>Clinic</div>
+                <div>
+                <input name="clinic.name" type="text" placeholder="Clinic Name" className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+
+                </div>
+                <div>
+                <input name="clinic.location" type="text" placeholder="Clinic Location" className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
+
+                </div>
+                <div>
+                <input name="clinic.phoneNumber" type="tel" placeholder="Clinic Phone Number" className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" />
                 </div>
 
                 <div>
@@ -262,6 +304,6 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default SignUp;
 
 
