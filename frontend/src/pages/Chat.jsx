@@ -253,10 +253,10 @@ import { Send, Plus } from "lucide-react";
 import { io } from "socket.io-client";
 import Voice from "../components/Voice";
 
-
 function Chat() {
 	const [socket, setSocket] = useState();
 	const [messages, setMessages] = useState([]);
+	const [voiceMessage, setVoiceMessage] = useState();
 	const [communities, setCommunities] = useState([]);
 	const [selectedCommunity, setSelectedCommunity] = useState();
 	const make_socket = (index) => {
@@ -271,13 +271,13 @@ function Chat() {
 		setSocket(eSocket);
 	};
 
-	function socketSetMessage (msg) {
+	function socketSetMessage(msg) {
 		msg.avatar =
 			"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces";
 		msg.isUser = true;
-    console.log(msg);
-		setMessages(prevMessages => [...prevMessages, msg]);
-	};
+		console.log(msg);
+		setMessages((prevMessages) => [...prevMessages, msg]);
+	}
 
 	function getCookie(cname) {
 		const name = `${cname}=`;
@@ -297,7 +297,7 @@ function Chat() {
 
 	const handleSendMessage = async (e) => {
 		e.preventDefault();
-		const content = e.target[0].value;
+		const content = voiceMessage;
 		const community_name = communities[selectedCommunity].title;
 
 		if (content && community_name) {
@@ -314,13 +314,13 @@ function Chat() {
 			});
 			const obj = await res.json();
 			socket.emit("message", obj.msg);
-			// obj.msg.avatar =
-			// 	"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces";
-			// obj.msg.isUser = true;
-			//
-			// setMessages([...messages, obj.msg]);
+			obj.msg.avatar =
+				"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces";
+			obj.msg.isUser = true;
+
+			setMessages([...messages, obj.msg]);
 		}
-		e.target[0].value = "";
+    setVoiceMessage("")
 	};
 
 	const handleChangeCommunity = async (index) => {
@@ -343,7 +343,7 @@ function Chat() {
 		}
 		setMessages(obj);
 		setSelectedCommunity(index);
-    make_socket(index);
+		make_socket(index);
 		// socket.on(communities[index]._id, (msg) => {
 		// 	socketSetMessage(msg);
 		// });
@@ -370,8 +370,13 @@ function Chat() {
 			{/* Sidebar */}
 			<div className="w-90 bg-white border-r border-gray-200">
 				<div className="p-4 border-b border-gray-200">
-					<h1 className="text-xl font-semibold flex items-center gap-40">Communities
-					<a href="/new"><button><Plus color="#2563EB"/></button></a>
+					<h1 className="text-xl font-semibold flex items-center gap-40">
+						Communities
+						<a href="/new">
+							<button>
+								<Plus color="#2563EB" />
+							</button>
+						</a>
 					</h1>
 					<div className="mt-4">
 						<input
@@ -496,9 +501,11 @@ function Chat() {
 						<input
 							type="text"
 							placeholder="Type your message..."
+							value={voiceMessage}
+							onChange={(e) => setVoiceMessage(e.target.value)}
 							className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 						/>
-						<Voice setNewMessage={setNewMessage} />
+						<Voice setNewMessage={setVoiceMessage} />
 						<button
 							type="submit"
 							className="ml-2 p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -513,4 +520,3 @@ function Chat() {
 }
 
 export default Chat;
-

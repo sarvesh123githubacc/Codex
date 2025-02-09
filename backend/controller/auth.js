@@ -89,7 +89,7 @@ const userLogin = async (req, res) => {
 		httpOnly: false,
 	});
 	res
-		.status(201)
+		.status(200)
 		.json({ message: "User logged in successfully", success: true });
 };
 
@@ -182,7 +182,7 @@ const doctorLogin = async (req, res) => {
 		httpOnly: false,
 	});
 	res
-		.status(201)
+		.status(200)
 		.json({ message: "Doctor logged in successfully", success: true });
 };
 

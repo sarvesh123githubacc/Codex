@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Mail, Lock, UserCircle2, Stethoscope } from "lucide-react";
 
 const Login = () => {
 	const [userType, setUserType] = useState("select");
+  const redirect = useNavigate();
 
 	const handleSubmit = async (e, type) => {
 		e.preventDefault();
@@ -18,6 +19,9 @@ const Login = () => {
 			body: JSON.stringify({ email: email, password: password }),
 		});
 		const obj = await res.json();
+    if(res.status === 200) {
+      return redirect("/dashboard");
+    }
 	};
 
 	const ProfileSelection = () => (
